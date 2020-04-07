@@ -1,0 +1,47 @@
+<!--
+ * @Date: 2020-04-07 16:26:10
+ * @LastEditors: code
+ * @Author: code
+ * @LastEditTime: 2020-04-07 17:00:42
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ok</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+      .illust {
+        width: 100%;
+        height: auto;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div v-for="object_id in object_ids">
+        <img
+          :src="`http://pan-yz.chaoxing.com/thumbnail/origin/${object_id}?type=img`"
+          class="illust"
+        />
+      </div>
+    </div>
+  </body>
+  <script>
+    var searchParams = new URLSearchParams(location.search);
+    var illust_id = searchParams.get("illust_id") || "80628032";
+    document.title = illust_id;
+    var object_ids =
+      searchParams.get("object_ids") ||
+      `["622c3f5c934489b00549fe99a65d2e9e","5c490fb55561eda8a928afd5a117a127"]`;
+    object_ids = JSON.parse(object_ids);
+    var app = new Vue({
+      el: "#app",
+      data: {
+        object_ids: object_ids,
+      },
+    });
+  </script>
+</html>
