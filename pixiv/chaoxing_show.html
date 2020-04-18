@@ -2,7 +2,7 @@
  * @Date: 2020-04-07 16:26:10
  * @LastEditors: code
  * @Author: code
- * @LastEditTime: 2020-04-07 17:00:42
+ * @LastEditTime: 2020-04-19 00:18:37
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -17,15 +17,26 @@
         height: auto;
         margin-bottom: 5px;
       }
+      .download {
+        text-align: center;
+        width: 100%;
+        margin: 0;
+      }
     </style>
   </head>
   <body>
     <div id="app">
-      <div v-for="object_id in object_ids">
+      <div v-for="(object_id, index) in object_ids">
         <img
           :src="`http://pan-yz.chaoxing.com/thumbnail/origin/${object_id}?type=img`"
           class="illust"
         />
+        <h1 class="download">
+          <a :href="`http://d0.ananas.chaoxing.com/download/${object_id}`"
+            >{{illust_id}}_p{{index}}
+          </a>
+        </h1>
+        <hr />
       </div>
     </div>
   </body>
@@ -41,7 +52,9 @@
       el: "#app",
       data: {
         object_ids: object_ids,
+        illust_id: illust_id,
       },
     });
   </script>
+  <script src="https://hm.baidu.com/hm.js?cc5ddf97c7cdbf463feba7397be6a70f"></script>
 </html>
