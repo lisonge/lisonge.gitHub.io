@@ -1,0 +1,44 @@
+<!--
+ * @Date: 2020-02-13 00:14:21
+ * @LastEditors: code
+ * @Author: code
+ * @LastEditTime: 2020-05-19 21:18:37
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h3>
+        本网页根据<a
+          href="https://www.zhihu.com/question/394434460/answer/1222502907"
+          target="_blank"
+          >知乎回答</a
+        >而制作
+      </h3>
+      <p>反转字符之前：<input v-model="message1" /></p>
+      <p>反转字符之后：<input v-model="message2" /></p>
+      <p>选中复制即可：<input :value="ouputText" /></p>
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message1: '',
+        message2: '',
+      },
+      computed: {
+        ouputText: function() {
+          return `${this.message1}\u202e${this.message2}`;
+        },
+      },
+    });
+  </script>
+</html>
