@@ -1,0 +1,36 @@
+:root {
+  --custom-track-color: /*[[custom-track-color]]*/ ;
+  --custom-thumb-color: /*[[custom-thumb-color]]*/ ;
+  --custom-width: /*[[custom-width]]*/ ;
+  --webkit-scrollbar-thumb-hover: /*[[custom-thumb-color-hover]]*/ ;
+  --webkit-scrollbar-track-hover: /*[[custom-track-color-hover]]*/ ;
+  --webkit-scrollbar-width-height: /*[[webkit-scrollbar-width-height]]*/ ;
+  --webkit-scrollbar-border-radius: /*[[webkit-scrollbar-border-radius]]*/ ;
+}
+*:not(select) {
+  scrollbar-color: var(--custom-thumb-color) var(--custom-track-color) !important;
+  scrollbar-width: var(--custom-width) !important;
+}
+/* Chrome and derivatives*/
+::-webkit-scrollbar {
+  max-width: var(--webkit-scrollbar-width-height) !important;
+  max-height: var(--webkit-scrollbar-width-height) !important;
+  background: var(--custom-track-color) !important;
+}
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+  background: var(--custom-track-color) !important;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--custom-thumb-color) !important;
+  border-radius: var(--webkit-scrollbar-border-radius) !important;
+}
+::-webkit-scrollbar-corner:hover,
+::-webkit-scrollbar-track:hover,
+::-webkit-scrollbar-track-piece:hover {
+  background: var(--webkit-scrollbar-track-hover) !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--webkit-scrollbar-thumb-hover) !important;
+}
