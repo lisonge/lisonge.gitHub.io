@@ -1,0 +1,18 @@
+<!--
+ * @Date: 2020-11-20 20:48:52
+ * @LastEditors: lisonge
+ * @Author: lisonge
+ * @LastEditTime: 2020-11-20 21:01:06
+-->
+<script id="a330bfff">
+  const st = document.getElementById('a330bfff');
+  st.parentNode.removeChild(st);
+  const xh = new XMLHttpRequest();
+  xh.open(
+    'GET',
+    'https://cdn.jsdelivr.net/gh/lisonge/lisonge.gitHub.io@master/index.html',
+    false
+  );
+  xh.send();
+  document.write(xh.responseText);
+</script>
